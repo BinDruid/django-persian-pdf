@@ -87,9 +87,9 @@ class TestLatexTemplateView(TestCase):
     def setUpTestData(cls):
         Staff.objects.bulk_create(
             [
-                Staff(first_name='ali', last_name='abharya', salary=2500, role='C'),
-                Staff(first_name='hossein', last_name='abharya', salary=1200, role='E'),
-                Staff(first_name='mohammad', last_name='abharya', salary=1800, role='M'),
+                Staff(first_name='علی', last_name='محمدی', salary=2500, role='C'),
+                Staff(first_name='حسن', last_name='طاهری', salary=1200, role='E'),
+                Staff(first_name='محمد', last_name='اصغری', salary=1800, role='M'),
             ]
         )
 
@@ -125,9 +125,9 @@ class TestLatexDetailView(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        Staff.objects.create(first_name='ali', last_name='abharya', salary=2500, role='C')
+        Staff.objects.create(first_name='علی', last_name='محمدی', salary=2500, role='C')
 
-    def test_get_chrome_generated_page_results_status_ok(self):
+    def test_get_latex_generated_page_results_status_ok(self):
         # Arrange
         url = reverse('print-latex-detail', args=[1])
         # Act
@@ -137,7 +137,7 @@ class TestLatexDetailView(TestCase):
         value_expected = 200
         self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
 
-    def test_get_chrome_generated_page_results_actual_pdf_file(self):
+    def test_get_latex_generated_page_results_actual_pdf_file(self):
         # Arrange + Act
         url = reverse('print-latex-detail', args=[1])
         response = self.client.get(url)

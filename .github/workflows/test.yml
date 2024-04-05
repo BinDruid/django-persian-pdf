@@ -25,6 +25,11 @@ jobs:
       - uses: awalsh128/cache-apt-pkgs-action@latest
         with:
           packages: texlive-xetex google-chrome-stable
+      - name: Add persian fonts
+        run: |
+          mkdir -p ~/.fonts
+          cp ./tests/fonts/Vazirmatn.ttf ~/.fonts/
+          fc-cache -f -v
       - name: Setup python
         uses: actions/setup-python@v2
         with:
