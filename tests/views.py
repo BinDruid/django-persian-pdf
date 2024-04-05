@@ -24,7 +24,7 @@ class LatexTemplatePrint(views.LatexPDFTemplateView):
         context['staffs'] = Staff.objects.all()
         return context
 
+
 class LatexDetailPrint(views.LatexPDFDetailView):
     queryset = Staff.objects.all()
     template_name = 'staff_detail.tex'
-
