@@ -6,3 +6,5 @@ Changelog
 -----------------
 
 * Initial release
+* Complete test pipeline
+
