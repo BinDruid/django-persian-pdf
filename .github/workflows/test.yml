@@ -21,8 +21,10 @@ jobs:
           - python-version: '3.12'
             django-version: '3.2'
     steps:
-      - uses: browser-actions/setup-chrome@v1
       - uses: actions/checkout@v2
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: texlive-xetex google-chrome-stable
       - name: Setup python
         uses: actions/setup-python@v2
         with:
