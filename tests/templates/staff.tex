@@ -13,6 +13,12 @@
   {% for staff in staffs %}
     {{ staff.first_name }}
     \newline
+    {{ staff.last_name }}
+    \newline
+    {{ staff.salary }}
+    \newline
+    {{ staff.get_role_display }}
+    \newline
   {% endfor %}
 
 \end{document}
