@@ -1,0 +1,17 @@
+\documentclass[a4paper,9pt]{letter}
+\usepackage[portrait,margin=0.1in]{geometry}
+\usepackage{tabularx}
+\usepackage{xepersian}
+
+\settextfont{Vazirmatn}
+\setlatintextfont{Vazirmatn}
+\setdigitfont[Scale=1.1]{Vazirmatn}
+
+\begin{document}
+
+  {% for staff in staffs %}
+    {{ staff.first_name }}
+    \newline
+  {% endfor %}
+
+\end{document}
