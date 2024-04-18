@@ -1,1 +1,1 @@
-from .views import ChromPDFTemplateView, LatexPDFTemplateView, ChromePDFDetailView, LatexPDFDetailView
+from .views import ChromePDFTemplateView, LatexPDFTemplateView, ChromePDFDetailView, LatexPDFDetailView
