@@ -2,7 +2,7 @@ from django_persian_pdf import views
 from .models import Staff
 
 
-class ChromeTemplatePrint(views.ChromPDFTemplateView):
+class ChromeTemplatePrint(views.ChromePDFTemplateView):
     template_name = 'staff.html'
 
     def get_context_data(self, **kwargs):
