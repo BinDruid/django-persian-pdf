@@ -2,7 +2,7 @@ from django_persian_pdf import views
 from .models import Staff
 
 
-class ChromeTemplatePrint(views.ChromPDFTemplateView):
+class ChromeTemplatePrint(views.ChromePDFTemplateView):
     template_name = 'staff.html'
 
     def get_context_data(self, **kwargs):
@@ -24,7 +24,7 @@ class LatexTemplatePrint(views.LatexPDFTemplateView):
         context['staffs'] = Staff.objects.all()
         return context
 
+
 class LatexDetailPrint(views.LatexPDFDetailView):
     queryset = Staff.objects.all()
     template_name = 'staff_detail.tex'
-

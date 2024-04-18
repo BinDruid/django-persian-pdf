@@ -50,7 +50,7 @@ class LatexPDFDetailView(PDFDetailView):
     compiler_class = LatexCompiler
 
 
-class ChromPDFTemplateView(PDFTemplateView):
+class ChromePDFTemplateView(PDFTemplateView):
     compiler_class = ChromeCompiler
 
 

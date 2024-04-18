@@ -6,3 +6,11 @@ Changelog
 -----------------
 
 * Initial release
+* Complete test pipeline
+
+
+0.10 (2024-04-18)
+-----------------
+
+* Fix class names
+* Add documents
