@@ -93,7 +93,7 @@ class TestLatexTemplateView(TestCase):
             ]
         )
 
-    def test_get_chrome_generated_page_results_status_ok(self):
+    def test_get_latex_generated_page_results_status_ok(self):
         # Arrange
         url = reverse('print-latex-template')
         # Act
@@ -103,7 +103,7 @@ class TestLatexTemplateView(TestCase):
         value_expected = 200
         self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
 
-    def test_get_chrome_generated_page_results_actual_pdf_file(self):
+    def test_get_latex_generated_page_results_actual_pdf_file(self):
         # Arrange + Act
         url = reverse('print-latex-template')
         response = self.client.get(url)
