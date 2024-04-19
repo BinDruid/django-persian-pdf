@@ -42,17 +42,17 @@ class PDFDetailView(SingleObjectMixin, PDFTemplateView):
         return self.render_to_response(context)
 
 
-class LatexPDFTemplateView(PDFTemplateView):
+class LatexToPDFTemplateView(PDFTemplateView):
     compiler_class = LatexCompiler
 
 
-class LatexPDFDetailView(PDFDetailView):
+class LatexToPDFDetailView(PDFDetailView):
     compiler_class = LatexCompiler
 
 
-class ChromePDFTemplateView(PDFTemplateView):
+class HTMLToPDFTemplateView(PDFTemplateView):
     compiler_class = ChromeCompiler
 
 
-class ChromePDFDetailView(PDFDetailView):
+class HTMLToPDFDetailView(PDFDetailView):
     compiler_class = ChromeCompiler
