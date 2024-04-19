@@ -18,7 +18,7 @@ Here are the view classes available in **django_persian_pdf**:
 
 -  ``HTMLToPDFTemplateView`` is an extension of django ``TemplateView`` using ``.html`` template to generate pdf file.
 -  ``HTMLToPDFDetailView`` is an extension of django ``DetailView`` using ``.html`` template  to generate pdf file.
--  ``LatexToPDFTemplateView`` is an extension of django ``TemplateView`` using``.tex`` template to generate pdf file.
+-  ``LatexToPDFTemplateView`` is an extension of django ``TemplateView`` using ``.tex`` template to generate pdf file.
 -  ``LatexToPDFDetailView`` is an extension of django ``DetailView`` using ``.tex`` template to generate pdf file.
 
 Status
@@ -69,9 +69,9 @@ Example #1: Using HTML Template to generate a PDF response
 
 .. code-block:: python
 
-    from django_persian_pdf import views
+    from django_persian_pdf import views as pdf_views
 
-    class TemplatePrint(views.HTMLToPDFTemplateView):
+    class TemplatePrint(pdf_views.HTMLToPDFTemplateView):
         template_name = 'payment_reports.html'
 
         def get_context_data(self, **kwargs):
@@ -79,7 +79,7 @@ Example #1: Using HTML Template to generate a PDF response
             context['payments'] = Payments.objects.all()
             return context
 
-    class DetailPrint(views.HTMLToPDFDetailView):
+    class DetailPrint(pdf_views.HTMLToPDFDetailView):
         template_name = 'payment_detail.html'
         queryset = Payments.objects.all()
 
@@ -89,9 +89,9 @@ Example #2: Using LaTeX Template to generate a PDF response
 
 .. code-block:: python
 
-    from django_persian_pdf import views
+    from django_persian_pdf import views as pdf_views
 
-    class TemplatePrint(views.LatexToPDFTemplateView):
+    class TemplatePrint(pdf_views.LatexToPDFTemplateView):
         template_name = 'payment_reports.tex'
 
         def get_context_data(self, **kwargs):
@@ -99,11 +99,11 @@ Example #2: Using LaTeX Template to generate a PDF response
             context['payments'] = Payments.objects.all()
             return context
 
-    class DetailPrint(views.LatexToPDFDetailView):
+    class DetailPrint(pdf_views.LatexToPDFDetailView):
         template_name = 'payment_detail.tex'
         queryset = Payments.objects.all()
 
-Notes for LaTeX
+Notes on LaTeX
 ----------------
 
 1. Using latex template for with persian fonts requires you to have installed your persian fonts in home directory.
