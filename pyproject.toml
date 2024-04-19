@@ -6,7 +6,7 @@ requires = [
 
 [project]
 name = "django-persian-pdf"
-version = "0.0.5"
+version = "0.1.1"
 description = "Django class based views to generate pdf files using html or latex template."
 keywords = [
   "pdf",

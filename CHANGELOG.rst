@@ -13,3 +13,9 @@ Changelog
 
 * Fix class names
 * Add documents
+
+0.11 (2024-04-19)
+-----------------
+
+* Update base view class names
+* Add latex example to documents
