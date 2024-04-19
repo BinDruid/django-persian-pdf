@@ -106,12 +106,12 @@ Example #2: Using LaTeX Template to generate a PDF response
 Notes on LaTeX
 ----------------
 
-1. Using latex template for with persian fonts requires you to have installed your persian fonts in home directory.
+1. Using latex template with persian fonts requires you to have installed your persian fonts in home directory.
 
 .. code-block:: bash
 
 
-   mkdir -p ~/.fonts
+   mkdir ~/.fonts
    cp /path_to_fonts/Vazirmatn.ttf ~/.fonts/
    fc-cache -f -v
 
