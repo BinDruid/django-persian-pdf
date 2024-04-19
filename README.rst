@@ -11,7 +11,7 @@ and build the actual pdf file:
 
 Using this approach avoids regular overhead for parsing html tags, improving overall
 response time and memory usage when generating large pdf files.
-Django Persian PDF follows django class based views and base on the compiler provide 4 generic view classes.
+Django Persian PDF follows django class based views and base on the compilers provide 4 generic view classes.
 The only difference is that these classes render their associated template and return a pdf file as response.
 Just like django views you can pass queryset or make context to be used in template.
 Here are the view classes available in **django_persian_pdf**:
@@ -50,10 +50,16 @@ Install
 
    pip install django-persian-pdf
 
+- Make sure you have installed either ``google-chrome-stable`` or ``texlive-xetex`` on your machine.
+
+.. code-block:: bash
+
+
+   sudo apt install google-chrome-stable
+   sudo apt install texlive-xetex
+
 Usage
 -----
-
-0. Make sure you have installed either `chrome_stable_` or `xelatex` on your machine.
 
 1. Edit settings.py and add `django_persian_pdf` to your `INSTALLED_APPS`.
 
