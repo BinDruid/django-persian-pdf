@@ -24,7 +24,7 @@ Here are the view classes available in **django_persian_pdf**:
 Status
 ------
 
-.. image:: https://github.com/bindruid/django-persian-pdf/workflows/Test/badge.svg?branch=master
+.. image:: https://img.shields.io/github/actions/workflow/status/bindruid/django-persian-pdf/test.yml.svg?branch=master
    :target: https://github.com/bindruid/django-persian-pdf/actions?workflow=Test
 
 .. image:: https://img.shields.io/pypi/v/django-persian-pdf.svg
