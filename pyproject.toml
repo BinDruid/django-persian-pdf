@@ -6,7 +6,7 @@ requires = [
 
 [project]
 name = "django-persian-pdf"
-version = "0.1.2"
+version = "0.1.3"
 description = "Django class based views to generate pdf files using html or latex template."
 keywords = [
   "pdf",
@@ -46,16 +46,6 @@ dependencies = [
 Changelog = "https://github.com/bindruid/django-persian-pdf/blob/master/CHANGELOG.rst"
 Repository = "https://github.com/bindruid/django-persian-pdf"
 
-[tool.black]
-target-version = ['py38']
-
-[tool.isort]
-add_imports = [
-    "from __future__ import annotations"
-]
-force_single_line = true
-profile = "black"
-
 [tool.pytest.ini_options]
 addopts = """\
     --strict-config
@@ -64,16 +54,57 @@ addopts = """\
     """
 django_find_project = false
 
-[tool.mypy]
-mypy_path = "src/"
-namespace_packages = false
-show_error_codes = true
-strict = true
-warn_unreachable = true
-
-[[tool.mypy.overrides]]
-module = "tests.*"
-allow_untyped_defs = true
-
 [tool.rstcheck]
-report_level = "ERROR"
+report_level = 'ERROR'
+
+[tool.ruff]
+exclude = [
+    '.eggs',
+    '.git',
+    '.ipynb_checkpoints',
+    '.mypy_cache',
+    '.nox',
+    '.pants.d',
+    '.pyenv',
+    '.pytest_cache',
+    '.pytype',
+    '.ruff_cache',
+    '.tox',
+    '.venv',
+    '.vscode',
+    '__pypackages__',
+    '_build',
+    'build',
+    'dist',
+    'migrations',
+    'settings',
+    'site-packages',
+    'venv',
+]
+src = ['src', 'tests']
+include = ['*.py']
+line-length = 120
+output-format = 'grouped'
+target-version = 'py311'
+
+[tool.ruff.lint]
+# DJ = Django
+# S = Bandit Security
+# SIM = Simplify
+# E = Pycodestyle Error
+# F = Pyflask
+# C4 = Comprehensions
+# BLE = Blind Exception
+# I = Isort
+select = ['DJ', 'S', 'SIM', 'C4', 'E', 'F', 'BLE', 'I']
+ignore = ['E501', 'DJ001']
+fixable = ['I']
+
+[tool.ruff.lint.per-file-ignores]
+'__init__.py' = ['F401']
+'*test*.py' = ['S']
+'*factories*.py' = ['S']
+
+[tool.ruff.format]
+quote-style = 'single'
+docstring-code-format = true
