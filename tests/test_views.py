@@ -8,7 +8,6 @@ from .models import Staff
 
 
 class TestChromeTemplateView(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         Staff.objects.bulk_create(
@@ -27,7 +26,7 @@ class TestChromeTemplateView(TestCase):
         # Assert
         value_under_test = response.status_code
         value_expected = 200
-        self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
+        self.assertEqual(value_under_test, value_expected, msg='Did not get the page')
 
     def test_get_chrome_generated_page_results_actual_pdf_file(self):
         # Arrange + Act
@@ -48,7 +47,6 @@ class TestChromeTemplateView(TestCase):
 
 
 class TestChromeDetailView(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         Staff.objects.create(first_name='علی', last_name='محمدی', salary=2500, role='C')
@@ -61,7 +59,7 @@ class TestChromeDetailView(TestCase):
         # Assert
         value_under_test = response.status_code
         value_expected = 200
-        self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
+        self.assertEqual(value_under_test, value_expected, msg='Did not get the page')
 
     def test_get_chrome_generated_page_results_actual_pdf_file(self):
         # Arrange + Act
@@ -82,7 +80,6 @@ class TestChromeDetailView(TestCase):
 
 
 class TestLatexTemplateView(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         Staff.objects.bulk_create(
@@ -101,7 +98,7 @@ class TestLatexTemplateView(TestCase):
         # Assert
         value_under_test = response.status_code
         value_expected = 200
-        self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
+        self.assertEqual(value_under_test, value_expected, msg='Did not get the page')
 
     def test_get_latex_generated_page_results_actual_pdf_file(self):
         # Arrange + Act
@@ -122,7 +119,6 @@ class TestLatexTemplateView(TestCase):
 
 
 class TestLatexDetailView(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         Staff.objects.create(first_name='علی', last_name='محمدی', salary=2500, role='C')
@@ -135,7 +131,7 @@ class TestLatexDetailView(TestCase):
         # Assert
         value_under_test = response.status_code
         value_expected = 200
-        self.assertEqual(value_under_test, value_expected, msg=f'Did not get the page')
+        self.assertEqual(value_under_test, value_expected, msg='Did not get the page')
 
     def test_get_latex_generated_page_results_actual_pdf_file(self):
         # Arrange + Act

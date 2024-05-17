@@ -1,10 +1,10 @@
-from django.template import Template, Context
+from django.template import Context, Template
 from django.template.loader import get_template
 from django.utils.encoding import smart_str
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import SingleObjectMixin
 
-from .compilers import LatexCompiler, ChromeCompiler
+from .compilers import ChromeCompiler, LatexCompiler
 from .responses import PDFResponse
 
 
@@ -35,7 +35,6 @@ class PDFTemplateView(TemplateView):
 
 
 class PDFDetailView(SingleObjectMixin, PDFTemplateView):
-
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
