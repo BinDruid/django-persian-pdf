@@ -1,1 +1,1 @@
-from .views import HTMLToPDFTemplateView, LatexToPDFTemplateView, HTMLToPDFDetailView, LatexToPDFDetailView
+from .views import HTMLToPDFDetailView, HTMLToPDFTemplateView, LatexToPDFDetailView, LatexToPDFTemplateView

@@ -4,9 +4,9 @@ from django.utils.translation import gettext_lazy as _
 
 class Staff(models.Model):
     class Roles(models.TextChoices):
-        CEO = "C", _("مدیر عامل")
-        EXPERT = "E", "کارشناس"
-        MANAGER = "M", "مدیر"
+        CEO = 'C', _('مدیر عامل')
+        EXPERT = 'E', 'کارشناس'
+        MANAGER = 'M', 'مدیر'
 
     first_name = models.CharField(default='', max_length=256)
     last_name = models.CharField(default='', max_length=256)
@@ -16,3 +16,6 @@ class Staff(models.Model):
         choices=Roles.choices,
         default=Roles.CEO,
     )
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
